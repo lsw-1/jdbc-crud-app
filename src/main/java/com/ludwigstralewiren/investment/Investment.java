@@ -1,12 +1,12 @@
-package investment;
+package com.ludwigstralewiren.investment;
 
-import account.Account;
+import com.ludwigstralewiren.account.Account;
 import com.sun.istack.internal.NotNull;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by Ludwig on 9/15/2016.
@@ -18,9 +18,12 @@ public class Investment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
+    private String accountName;
+
     @NotNull
+    @Column
     private Long currentValue;
-    private Map<Long, Date> valueAtDate;
     @ManyToOne
     private Account account;
 
@@ -39,13 +42,6 @@ public class Investment {
         this.currentValue = currentValue;
     }
 
-    public Map<Long, Date> getValueAtDate() {
-        return valueAtDate;
-    }
-
-    public void setValueAtDate(Map<Long, Date> valueAtDate) {
-        this.valueAtDate = valueAtDate;
-    }
 
     public Account getAccount() {
         return account;

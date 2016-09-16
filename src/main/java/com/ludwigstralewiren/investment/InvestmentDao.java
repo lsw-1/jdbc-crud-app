@@ -1,6 +1,4 @@
-package investment;
-
-import java.util.List;
+package com.ludwigstralewiren.investment;
 
 /**
  * Created by Ludwig on 9/15/2016.
