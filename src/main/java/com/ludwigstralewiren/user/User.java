@@ -1,14 +1,14 @@
 package com.ludwigstralewiren.user;
 
+
 import javax.persistence.*;
 
 @Entity
-public class User {
+public class User{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column
     private String userName;
     @Column
@@ -18,7 +18,15 @@ public class User {
     @Column
     private Long phone;
 
+
     public User() {
+    }
+
+    public User(UserBuilder userBuilder){
+        this.userName = userBuilder.userName;
+        this.lastName = userBuilder.lastName;
+        this.email = userBuilder.email;
+        this.phone = userBuilder.phone;
     }
 
     @Override
@@ -71,4 +79,32 @@ public class User {
     public void setPhone(Long phone) {
         this.phone = phone;
     }
+
+    public static class UserBuilder {
+        private String userName;
+        private String lastName;
+        private String email;
+        private Long phone;
+
+        public UserBuilder(String userName, String lastName){
+            this.userName = userName;
+            this.lastName = lastName;
+        }
+
+        public UserBuilder withEmail(String email){
+            this.email = email;
+            return this;
+        }
+
+        public UserBuilder withPhone(Long phone){
+            this.phone = phone;
+            return this;
+        }
+
+        public User build(){
+            return new User(this);
+        }
+
+    }
 }
+

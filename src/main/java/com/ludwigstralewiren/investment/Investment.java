@@ -15,9 +15,8 @@ import java.util.TreeMap;
 public class Investment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Long id;
-
     @Column
     private String accountName;
 
@@ -30,8 +29,20 @@ public class Investment {
     public Investment() {
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public String getAccountName() {
+        return accountName;
+    }
+
+    public void setAccountName(String accountName) {
+        this.accountName = accountName;
     }
 
     public Long getCurrentValue() {
@@ -41,7 +52,6 @@ public class Investment {
     public void setCurrentValue(Long currentValue) {
         this.currentValue = currentValue;
     }
-
 
     public Account getAccount() {
         return account;
