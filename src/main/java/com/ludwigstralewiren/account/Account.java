@@ -18,6 +18,8 @@ public class Account {
     @Column
     private String accountName;
     @Column
+    private String password;
+    @Column
     private Double accountBalance;
     @OneToMany
     List<Investment> investments = new ArrayList<>();
@@ -27,6 +29,14 @@ public class Account {
 
     public Long getId() {
         return id;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setId(Long id) {

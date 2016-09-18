@@ -3,16 +3,20 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
 <VBox fx:controller="com.ludwigstralewiren.user.UserController"
       xmlns:fx="http://javafx.com/fxml" alignment="CENTER"
 >
     <Label>WELCOME TO THE BANK</Label>
     <Text>Choose an action</Text>
+
+    <TextField fx:id="field1"></TextField>
+    <TextField fx:id="field2"></TextField>
+    <Button onAction="#addUser">ADD</Button>
     <HBox alignment="CENTER">
-        <Button onAction="#addUser">ADD</Button>
         <Button onAction="#findUser">FIND</Button>
         <Button onAction="#deleteUser">DELETE</Button>
-
-        <VBox id="output"> </VBox>
+        <!-- OUTPUT OF STUFF-->
     </HBox>
+    <VBox fx:id="output"> </VBox>
 </VBox>
