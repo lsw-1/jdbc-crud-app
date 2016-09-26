@@ -1,6 +1,6 @@
 package com.ludwigstralewiren.account;
 
-import com.ludwigstralewiren.user.User;
+import com.ludwigstralewiren.account.Account;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import java.util.List;
  */
 public interface AccountDao {
     List<Account> findAll();
-    User findById(Long id);
-    void save(User user);
-    void update(User user);
-    void delete(User user);
+    Account findById(Long id);
+    void save(Account user);
+    void update(Account user);
+    void delete(Account user);
 }

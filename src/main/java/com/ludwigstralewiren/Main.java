@@ -13,10 +13,12 @@ import javafx.stage.Stage;
 
         @Override
         public void start(Stage primaryStage) throws Exception {
-            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("./start.fxml"));
-            primaryStage.setTitle("JDBC APP");
-            primaryStage.setScene(new Scene(root, 300, 300));
+            Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/login.fxml"));
+            primaryStage.setTitle("WELCOME");
+            primaryStage.setScene(new Scene(root, 500, 500));
             primaryStage.show();
+
+
         }
 
         public static void main(String[] args) {

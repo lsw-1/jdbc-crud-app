@@ -50,7 +50,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void save(User user) {
+    public Long save(User user) {
 
     /*TO SAVE A ENTITY*/
 //        Open session
@@ -64,6 +64,7 @@ public class UserDaoImpl implements UserDao {
 //          close
         session.close();
 
+        return id;
     }
 
     public void update(User user) {
@@ -89,5 +90,16 @@ public class UserDaoImpl implements UserDao {
         session.getTransaction().commit();
 
         session.close();
+    }
+
+    @Override
+    public String findUserByName(String name) {
+        Session session = sessionFactory.openSession();
+
+//TODO: Make a query to search for user with corresponding name and IF not existing alert user
+
+        session.close();
+
+        return null;
     }
 }

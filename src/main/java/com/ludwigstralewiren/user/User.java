@@ -1,6 +1,11 @@
 package com.ludwigstralewiren.user;
 
 
+
+import com.ludwigstralewiren.account.Account;
+import com.sun.istack.internal.NotNull;
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,25 +14,17 @@ public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column
     private String userName;
-    @Column
     private String lastName;
-    @Column
-    private String email;
-    @Column
-    private Long phone;
 
 
     public User() {
     }
 
-    public User(UserBuilder userBuilder){
+/*    public User(UserBuilder userBuilder){
         this.userName = userBuilder.userName;
         this.lastName = userBuilder.lastName;
-        this.email = userBuilder.email;
-        this.phone = userBuilder.phone;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -35,8 +32,6 @@ public class User{
                 "id=" + id +
                 ", userName='" + userName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
                 '}';
     }
 
@@ -64,22 +59,9 @@ public class User{
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
-    public Long getPhone() {
-        return phone;
-    }
-
-    public void setPhone(Long phone) {
-        this.phone = phone;
-    }
-
+/*
     public static class UserBuilder {
         private String userName;
         private String lastName;
@@ -106,5 +88,6 @@ public class User{
         }
 
     }
+*/
 }
 

@@ -1,6 +1,6 @@
 package com.ludwigstralewiren.investment;
 
-import com.ludwigstralewiren.user.User;
+import com.ludwigstralewiren.investment.Investment;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import java.util.List;
  */
 public interface InvestmentDao {
     List<Investment> findAll();
-    User findById(Long id);
-    void save(User user);
-    void update(User user);
-    void delete(User user);
+    Investment findById(Long id);
+    void save(Investment investment);
+    void update(Investment investment);
+    void delete(Investment investment);
 }
