@@ -12,11 +12,7 @@ import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.stream.DoubleStream;
 
-/**
- * Created by Ludwig on 9/15/2016.
- */
 @Entity
-@Proxy(lazy = false)
 public class Account {
 
     @Id
@@ -25,24 +21,15 @@ public class Account {
 
     private String accountType;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "account", fetch = FetchType.EAGER, cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Investment> investments = new ArrayList<>();
 
     public Account() {
     }
 
-    public Account(Long id){
-        this.id = id;
-    }
-
-
     @Override
     public String toString() {
-        return "Account{" +
-                "id=" + id +
-                ", accountType='" + accountType + '\'' +
-                ", investments=" + investments +
-                '}';
+        return "ACCOUNT WITH ID: " + id + ", ACCOUNT TYPE: " + accountType ;
     }
 
     public Long getId() {
@@ -65,14 +52,8 @@ public class Account {
         return investments;
     }
 
-    public void addInvestment(Investment investment) {
-        investments.add( investment );
-        investment.setAccount(this);
-    }
-
-    public void removeInvestment(Investment investment) {
-        investments.remove( investment );
-        investment.setAccount( null );
+    public void setInvestments(List<Investment> investments) {
+        this.investments = investments;
     }
 
 }

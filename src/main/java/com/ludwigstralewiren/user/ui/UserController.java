@@ -38,7 +38,6 @@ public class UserController {
     //    ~~~~~~~~~~~~~~~~FIELDS OF SIGN-UP PAGE~~~~~~~~~~~~~~
     @FXML
     private TextField username;
-
     @FXML
     private TextField firstName;
     @FXML
@@ -64,19 +63,20 @@ public class UserController {
 
         String f = firstName.getText();
         String l = lastName.getText();
-        String m = email.getText();
-        String nr = phone.getText();
-        if (f.isEmpty() || l.isEmpty() || m.isEmpty() || nr.isEmpty()) {
+/*        String m = email.getText();
+        String nr = phone.getText();*/
+        if (f.isEmpty() || l.isEmpty()) {
             System.out.println("INCORRECT INPUT");
         } else {
             User user = new User();
+            user.setUserName(f);
+            user.setLastName(l);
 
             System.out.println(user);
 
-            goToUser(actionEvent, user);
             userDao.save(user);
+            goToUser(actionEvent, user);
         }
-//        goTo(actionEvent, "user-page");
     }
 
     public void deleteUser(ActionEvent actionEvent) throws IOException {

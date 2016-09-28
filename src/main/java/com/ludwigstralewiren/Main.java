@@ -14,9 +14,10 @@ import javafx.stage.Stage;
         @Override
         public void start(Stage primaryStage) throws Exception {
             Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("views/login.fxml"));
-            primaryStage.setTitle("WELCOME");
-            primaryStage.setScene(new Scene(root, 500, 500));
+            primaryStage.setTitle("INVESTMENT VALUE TACKER");
+            primaryStage.setScene(new Scene(root, 400, 300));
             primaryStage.show();
+            primaryStage.setResizable(false);
 
 
         }

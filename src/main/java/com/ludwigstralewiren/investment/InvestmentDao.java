@@ -11,6 +11,5 @@ public interface InvestmentDao {
     List<Investment> findAll();
     Investment findById(Long id);
     void save(Investment investment);
-    void update(Investment investment);
     void delete(Investment investment);
 }

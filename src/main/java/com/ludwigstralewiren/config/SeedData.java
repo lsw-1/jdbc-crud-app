@@ -14,7 +14,7 @@ public class SeedData {
     private static String[] names = {"Sven", "Ludwig", "Linn", "Patrick", "Camilla"};
     private static String[] lastNames = {"Svensson", "Karlsson", "Wiren", "Armansson"};
     private static Long[] numbers = {7121192L, 0702141L, 151515L, 9823562386L};
-    private static String[] emails = {"ludwigo@hotmail.com", "svensio@gmail.com", "karsson@dond.se", "snygooas@sve.com"};
+    private static String[] emails = {"ludwigo@hotmail.com", "svensio@gmail.com", "karsson@dond.se", "snyooas@sve.com"};
 
     public static void insertUsers() {
         for (int i = 1; i <= 4; i++) {

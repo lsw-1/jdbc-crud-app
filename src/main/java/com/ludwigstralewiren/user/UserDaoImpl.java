@@ -1,10 +1,12 @@
 package com.ludwigstralewiren.user;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+
 import java.util.List;
 
 import static com.ludwigstralewiren.config.HibernateUtil.getSessionFactory;
@@ -50,7 +52,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Long save(User user) {
+    public void save(User user) {
 
     /*TO SAVE A ENTITY*/
 //        Open session
@@ -58,26 +60,13 @@ public class UserDaoImpl implements UserDao {
 //        Begin transaction
         session.beginTransaction();
 //        Use the session to save
-        Long id = (Long) session.save(user);
+        session.saveOrUpdate(user);
 //        commit transaction
         session.getTransaction().commit();
 //          close
         session.close();
-
-        return id;
     }
 
-    public void update(User user) {
-        Session session = sessionFactory.openSession();
-
-        session.beginTransaction();
-
-        session.update(user);
-
-        session.getTransaction().commit();
-
-        session.close();
-    }
 
     @Override
     public void delete(User user) {
@@ -93,13 +82,16 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public String findUserByName(String name) {
+    public List findUserByName(String name) {
         Session session = sessionFactory.openSession();
+        String sql = "SELECT * FROM user WHERE userName=:name";
+        SQLQuery query = session.createSQLQuery(sql)
+                .addEntity(User.class)
+                .setParameter("name", name);
 
-//TODO: Make a query to search for user with corresponding name and IF not existing alert user
-
+        List results = query.list();
         session.close();
+        return results;
 
-        return null;
     }
 }

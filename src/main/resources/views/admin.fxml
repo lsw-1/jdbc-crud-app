@@ -8,47 +8,64 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ludwigstralewiren.admin.adminController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="container" stylesheets="@../static/main.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ludwigstralewiren.admin.adminController">
 
    <children>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Field 1" />
-      <TextField fx:id="field1" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Field 2" />
-      <TextField fx:id="field2" />
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SELECT ID" />
-      <TextField fx:id="fieldID" />
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <VBox prefHeight="200.0" prefWidth="100.0" styleClass="fields">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Field 1" />
+                  <TextField fx:id="field1" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Field 2" />
+                  <TextField fx:id="field2" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SELECT ID" />
+                  <TextField fx:id="fieldID" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="btn-box">
          <children>
             <VBox prefHeight="229.0" prefWidth="300.0">
                <children>
                   <Label text="USERS" />
-                  <Button fx:id="CreateUserBtn" mnemonicParsing="false" onAction="#createUser" text="CREATE" />
+                  <Button fx:id="CreateUserBtn" mnemonicParsing="false" onAction="#createUser" text="SAVE" />
                   <Button fx:id="deleteUserBtn" mnemonicParsing="false" onAction="#deleteUser" text="DELETE" />
-                  <Button fx:id="UpdateUserBtn" mnemonicParsing="false" onAction="#UpdateUser" text="UPDATE" />
                   <Button fx:id="getUsersBtn" mnemonicParsing="false" onAction="#GetAllUsers" text="GET" />
+                  <Button  mnemonicParsing="false" onAction="#getByName" text="GET by Name" />
+                  <Button onAction="#getAUser" text="Get one " />
                </children>
             </VBox>
             <VBox prefHeight="271.0" prefWidth="401.0">
                <children>
                   <Label text="INVESTMENTS" />
-                  <Button fx:id="createInvestmentBtn" mnemonicParsing="false" onAction="#createInvestment" text="CREATE" />
+                  <Button fx:id="createInvestmentBtn" mnemonicParsing="false" onAction="#createInvestment" text="SAVE" />
                   <Button fx:id="deleteInvestmentBtn" mnemonicParsing="false" onAction="#deleteInvestment" text="DELETE" />
-                  <Button fx:id="updateInvestmentBtn" mnemonicParsing="false" onAction="#updateInvestment" text="UPDATE" />
-                  <Button fx:id="getInvestmentsBtn" onAction="#GetAllInvestments" text="GET" />
+                  <Button fx:id="getInvestmentsBtn" onAction="#getAllInvestments" text="GET" />
+                  <Button onAction="#getAInvest" text="Get all of Account" />
                </children>
             </VBox>
             <VBox prefHeight="169.0" prefWidth="359.0">
                <children>
                   <Label text="ACCOUNTS" />
-                  <Button fx:id="createAccountBtn" mnemonicParsing="false" onAction="#createAccount" text="CREATE" />
+                  <Button fx:id="createAccountBtn" mnemonicParsing="false" onAction="#createAccount" text="SAVE" />
                   <Button fx:id="deleteAccountBtn" mnemonicParsing="false" onAction="#deleteAccount" text="DELETE" />
-                  <Button fx:id="updateAccountBtn" mnemonicParsing="false" onAction="#updateAccount" text="UPDATE" />
                   <Button mnemonicParsing="false" onAction="#GetAllAccounts" text="GET" />
+                  <Button onAction="#getAAccount" text="Get one" />
                </children>
             </VBox>
          </children>
       </HBox>
-      <VBox prefHeight="200.0" prefWidth="386.0">
+      <VBox prefHeight="200.0" prefWidth="386.0" styleClass="result">
          <children>
             <Label text="RESULT" />
             <TextFlow fx:id="result" prefHeight="200.0" prefWidth="457.0" />

@@ -14,16 +14,15 @@ import java.util.TreeMap;
  * Created by Ludwig on 9/15/2016.
  */
 @Entity
-@Proxy(lazy = false)
 public class Investment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Double currentValue;
+    private Long currentValue;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Account account;
     public Investment() {
     }
@@ -34,7 +33,6 @@ public class Investment {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", currentValue=" + currentValue +
-                ", account=" + account +
                 '}';
     }
 
@@ -54,11 +52,11 @@ public class Investment {
         this.name = name;
     }
 
-    public Double getCurrentValue() {
+    public Long getCurrentValue() {
         return currentValue;
     }
 
-    public void setCurrentValue(Double currentValue) {
+    public void setCurrentValue(Long currentValue) {
         this.currentValue = currentValue;
     }
 

@@ -18,8 +18,11 @@ public class User{
     private String lastName;
 
 
+
     public User() {
     }
+
+
 
 /*    public User(UserBuilder userBuilder){
         this.userName = userBuilder.userName;
@@ -61,7 +64,7 @@ public class User{
 
 
 
-/*
+    /*
     public static class UserBuilder {
         private String userName;
         private String lastName;

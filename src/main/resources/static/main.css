@@ -1,0 +1,19 @@
+.container{
+    -fx-alignment: center;
+    -fx-font-size: 18px;
+}
+.btn-box{
+    -fx-border-color: aliceblue;
+    -fx-spacing: 10%;
+    -fx-color:black;
+    -fx-fill:blue;
+    -fx-padding:4px;
+}
+
+.result {
+    -fx-font-size: 12px;
+    -fx-font-family: Arial;
+    -fx-background-color: azure;
+}
+
+

@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox fx:controller="com.ludwigstralewiren.user.ui.UserController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="container" stylesheets="@../static/main.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ludwigstralewiren.user.ui.UserController">
    <children>
       <Label text="Login Screen" />
       <VBox prefHeight="200.0" prefWidth="100.0">
@@ -17,11 +16,10 @@
             <TextField fx:id="username" layoutX="10.0" layoutY="44.0" />
             <Text layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" />
             <TextField />
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="btn-box">
                <children>
-                  <Button onAction="#goToAdmin" fx:id="login"  text="LOGIN"  />
+                  <Button fx:id="login" onAction="#goToAdmin" text="LOGIN" />
                   <Button fx:id="signup" onAction="#goToSignUp" text="SIGN UP" />
-                  <Button fx:id="test" onAction="#test"></Button>
                </children>
             </HBox>
          </children>
